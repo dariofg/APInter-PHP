@@ -1,8 +1,8 @@
 <?php
 
-namespace ctodobom\APInterPHP;
+namespace dariofg\APInterPHP;
 
-use ctodobom\APInterPHP\Cobranca\Boleto;
+use dariofg\APInterPHP\Cobranca\Boleto;
 use Closure;
 
 define("INTER_BAIXA_ACERTOS", "ACERTOS");
