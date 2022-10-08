@@ -211,11 +211,41 @@ class BancoInter
      * @throws BancoInterException
      * @return \stdClass
      */
-    public function controllerPost(
+    public function controllerPut(
         string $url,
         \JsonSerializable $data,
         array $http_params = null,
         bool $postJson = true
+    ) {
+        return $this->controllerPost($url, $data, $http_params, $postJson, 'PUT');
+    }
+
+    /**
+     *
+     * @param string $url
+     * @param array $http_params
+     * @throws BancoInterException
+     * @return \stdClass
+     */
+    public function controllerDelete(string $url, array $http_params)
+    {
+        return $this->controllerGet($url, $http_params, 'DELETE');
+    }
+
+    /**
+     *
+     * @param string $url
+     * @param \JsonSerializable $data
+     * @param array $http_params
+     * @throws BancoInterException
+     * @return \stdClass
+     */
+    public function controllerPost(
+        string $url,
+        \JsonSerializable $data,
+        array $http_params = null,
+        bool $postJson = true,
+        $customRequest = 'POST'
     ) {
 
         if ($http_params == null) {
@@ -244,7 +274,7 @@ class BancoInter
             $this->controllerInit($http_params);
             curl_setopt($this->curl, CURLOPT_URL, $this->apiBaseURL . $url);
 
-            curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, 'POST');
+            curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, $customRequest);
             curl_setopt($this->curl, CURLOPT_POSTFIELDS, $prepared_data);
 
             $curlReply = curl_exec($this->curl);
@@ -277,7 +307,7 @@ class BancoInter
         return $reply;
     }
 
-    public function controllerGet(string $url, array $http_params = null)
+    public function controllerGet(string $url, array $http_params = null, $customRequest = 'GET')
     {
 
         if ($http_params == null) {
@@ -294,7 +324,7 @@ class BancoInter
         while ($retry > 0) {
             $this->controllerInit($http_params);
             curl_setopt($this->curl, CURLOPT_URL, $this->apiBaseURL . $url);
-            curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, 'GET');
+            curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, $customRequest);
 
             $curlReply = curl_exec($this->curl);
             if (!$curlReply) {
@@ -326,6 +356,34 @@ class BancoInter
         }
 
         return $reply;
+    }
+
+    /**
+     * Cadastra webhook
+     *
+     * @param  $url do webhook a ser cadastrado
+     */
+    public function createWebhook(string $url)
+    {
+        $this->controllerPut("/cobranca/v2/boletos/webhook", ['webhookUrl' => $url]);
+    }
+
+    /**
+     *
+     * @return \stdClass
+     */
+    public function getWebhook(): \stdClass
+    {
+        $reply = $this->controllerGet("/cobranca/v2/boletos/webhook");
+
+        $replyData = json_decode($reply->body);
+
+        return $replyData;
+    }
+
+    public function deleteWebhook()
+    {
+        $this->controllerDelete("/cobranca/v2/boletos/webhook");
     }
 
     /**
