@@ -1,5 +1,5 @@
 {
-	"name" : "ctodobom/api-inter",
+	"name" : "dariofg/api-inter",
 	"type" : "package",
 	"description" : "Acesso à API do Banco Inter",
 	"license" : "LGPL-3.0-or-later",
@@ -8,12 +8,12 @@
 	],
 	"autoload" : {
 		"psr-4" : {
-			"ctodobom\\APInterPHP\\" : "src"
+			"dariofg\\APInterPHP\\" : "src"
 		}
 	},
 	"autoload-dev" : {
 		"psr-4" : {
-			"ctodobom\\APInterPHP\\Tests\\" : "tests"
+			"dariofg\\APInterPHP\\Tests\\" : "tests"
 		}
 	},
 	"require" : {
