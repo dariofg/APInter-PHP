@@ -227,9 +227,9 @@ class BancoInter
      * @throws BancoInterException
      * @return \stdClass
      */
-    public function controllerDelete(string $url, array $http_params)
+    public function controllerDelete(string $url)
     {
-        return $this->controllerGet($url, $http_params, 'DELETE');
+        return $this->controllerGet($url, null, 'DELETE');
     }
 
     /**
@@ -365,7 +365,10 @@ class BancoInter
      */
     public function createWebhook(string $url)
     {
-        $this->controllerPut("/cobranca/v2/boletos/webhook", ['webhookUrl' => $url]);
+		$data = new StdSerializable();
+		$data->webhookUrl = $url;
+
+        $this->controllerPut("/cobranca/v2/boletos/webhook", $data);
     }
 
     /**
