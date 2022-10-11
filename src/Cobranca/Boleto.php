@@ -1,8 +1,8 @@
 <?php
 
-namespace ctodobom\APInterPHP\Cobranca;
+namespace dariofg\APInterPHP\Cobranca;
 
-use ctodobom\APInterPHP\BancoInter;
+use dariofg\APInterPHP\BancoInter;
 
 class Boleto implements \JsonSerializable
 {
@@ -143,7 +143,7 @@ class Boleto implements \JsonSerializable
     }
 
     /**
-     * @return \ctodobom\APInterPHP\Cobranca\Multa
+     * @return \dariofg\APInterPHP\Cobranca\Multa
      */
     public function getMulta(): Multa
     {
@@ -151,7 +151,7 @@ class Boleto implements \JsonSerializable
     }
 
     /**
-     * @return \ctodobom\APInterPHP\Cobranca\Mora
+     * @return \dariofg\APInterPHP\Cobranca\Mora
      */
     public function getMora(): Mora
     {
@@ -253,7 +253,7 @@ class Boleto implements \JsonSerializable
     }
 
     /**
-     * @param \ctodobom\APInterPHP\Cobranca\Desconto $desconto1
+     * @param \dariofg\APInterPHP\Cobranca\Desconto $desconto1
      */
     public function setDesconto1($desconto1)
     {
@@ -261,7 +261,7 @@ class Boleto implements \JsonSerializable
     }
 
     /**
-     * @param \ctodobom\APInterPHP\Cobranca\Desconto $desconto2
+     * @param \dariofg\APInterPHP\Cobranca\Desconto $desconto2
      */
     public function setDesconto2($desconto2)
     {
@@ -269,7 +269,7 @@ class Boleto implements \JsonSerializable
     }
 
     /**
-     * @param \ctodobom\APInterPHP\Cobranca\Desconto $desconto3
+     * @param \dariofg\APInterPHP\Cobranca\Desconto $desconto3
      */
     public function setDesconto3($desconto3)
     {
@@ -277,7 +277,7 @@ class Boleto implements \JsonSerializable
     }
 
     /**
-     * @param \ctodobom\APInterPHP\Cobranca\Multa $multa
+     * @param \dariofg\APInterPHP\Cobranca\Multa $multa
      */
     public function setMulta(Multa $multa)
     {
@@ -285,7 +285,7 @@ class Boleto implements \JsonSerializable
     }
 
     /**
-     * @param \ctodobom\APInterPHP\Cobranca\Mora $mora
+     * @param \dariofg\APInterPHP\Cobranca\Mora $mora
      */
     public function setMora(Mora $mora)
     {

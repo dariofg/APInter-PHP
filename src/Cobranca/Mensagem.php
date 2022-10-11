@@ -1,6 +1,6 @@
 <?php
 
-namespace ctodobom\APInterPHP\Cobranca;
+namespace dariofg\APInterPHP\Cobranca;
 
 class Mensagem implements \JsonSerializable
 {

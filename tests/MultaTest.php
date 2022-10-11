@@ -1,8 +1,8 @@
 <?php
-namespace ctodobom\APInterPHP\Tests;
+namespace dariofg\APInterPHP\Tests;
 
 use PHPUnit\Framework\TestCase;
-use ctodobom\APInterPHP\Cobranca\Multa;
+use dariofg\APInterPHP\Cobranca\Multa;
 
 final class MultaTest extends TestCase
 {

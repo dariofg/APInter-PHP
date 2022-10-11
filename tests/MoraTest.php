@@ -1,8 +1,8 @@
 <?php
-namespace ctodobom\APInterPHP\Tests;
+namespace dariofg\APInterPHP\Tests;
 
 use PHPUnit\Framework\TestCase;
-use ctodobom\APInterPHP\Cobranca\Mora;
+use dariofg\APInterPHP\Cobranca\Mora;
 
 final class MoraTest extends TestCase
 {

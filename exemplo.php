@@ -2,11 +2,11 @@
 
 require_once "vendor/autoload.php";
 
-use ctodobom\APInterPHP\BancoInter;
-use ctodobom\APInterPHP\TokenRequest;
-use ctodobom\APInterPHP\BancoInterException;
-use ctodobom\APInterPHP\Cobranca\Boleto;
-use ctodobom\APInterPHP\Cobranca\Pagador;
+use dariofg\APInterPHP\BancoInter;
+use dariofg\APInterPHP\TokenRequest;
+use dariofg\APInterPHP\BancoInterException;
+use dariofg\APInterPHP\Cobranca\Boleto;
+use dariofg\APInterPHP\Cobranca\Pagador;
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();

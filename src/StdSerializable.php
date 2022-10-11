@@ -1,6 +1,6 @@
 <?php
 
-namespace ctodobom\APInterPHP;
+namespace dariofg\APInterPHP;
 
 /**
  *

@@ -1,8 +1,8 @@
 <?php
 
-namespace ctodobom\APInterPHP\Cobranca;
+namespace dariofg\APInterPHP\Cobranca;
 
-use ctodobom\APInterPHP\BancoInterValueSizeException;
+use dariofg\APInterPHP\BancoInterValueSizeException;
 
 class Pagador implements \JsonSerializable
 {

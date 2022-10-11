@@ -1,8 +1,8 @@
 <?php
-namespace ctodobom\APInterPHP\Tests;
+namespace dariofg\APInterPHP\Tests;
 
 use PHPUnit\Framework\TestCase;
-use ctodobom\APInterPHP\Cobranca\Desconto;
+use dariofg\APInterPHP\Cobranca\Desconto;
 
 final class DescontoTest extends TestCase
 {

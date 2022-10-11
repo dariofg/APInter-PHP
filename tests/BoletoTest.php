@@ -1,16 +1,16 @@
 <?php
-namespace ctodobom\APInterPHP\Tests;
+namespace dariofg\APInterPHP\Tests;
 
 use PHPUnit\Framework\TestCase;
-use ctodobom\APInterPHP\Cobranca\Boleto;
-use ctodobom\APInterPHP\Cobranca\Pagador;
+use dariofg\APInterPHP\Cobranca\Boleto;
+use dariofg\APInterPHP\Cobranca\Pagador;
 
 final class BoletoTest extends TestCase
 {
     public function testBoleto() {
         $boleto = new Boleto();
         $this->assertInstanceOf(Boleto::class, $boleto);
-        
-        $boleto->setPagador(new Pagador());        
+
+        $boleto->setPagador(new Pagador());
     }
 }
