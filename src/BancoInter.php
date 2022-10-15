@@ -523,7 +523,6 @@ class BancoInter
         $url .= "&itensPorPagina=" . $linhas;
 
         $reply = $this->controllerGet($url);
-
         $replyData = json_decode($reply->body);
 
         return $replyData;
