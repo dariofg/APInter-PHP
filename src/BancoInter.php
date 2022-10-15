@@ -510,7 +510,7 @@ class BancoInter
             $url .= "&situacao=" . $filtro;
         }
         if ($ordem) {
-            if (endsWith($ordem, '_DSC')) {
+            if (mb_substr($ordem, -4) == '_DSC') {
                 $ordem = str_replace('_DSC', '', $ordem);
                 $inverterOrdem = true;
             }
